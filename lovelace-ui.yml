@@ -1,0 +1,1729 @@
+kiosk_mode:
+  hide_header: true
+views:
+  - title: Home
+    sections:
+      - type: grid
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: vertical-stack
+                cards:
+                  - type: custom:mushroom-title-card
+                    title: |-
+                      {% set time = now().hour %}
+                      {% if (time >= 18) %}
+                        Boa noite, {{user}}
+                      {% elif (time >= 12) %}
+                        Boa tarde, {{user}}
+                      {% elif (time >= 5) %}
+                        Bom dia, {{user}}
+                      {% else %}
+                        Boa noite, {{user}}
+                      {% endif %}
+                    alignment: end
+                  - type: custom:clock-weather-card
+                    entity: weather.forecast_home
+                    hide_forecast_section: true
+                    hide_date: true
+                    weather_icon_type: fill
+                    tap_action:
+                      action: navigate
+                      navigation_path: '#meteorologia'
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: #00000000;
+                          box-shadow: none;
+                          width: 90%;
+                        }
+              - show_state: false
+                show_name: false
+                camera_view: auto
+                type: picture-entity
+                entity: sensor.blank_blank
+                image: /api/image/serve/5c20b5b768defcc7f87a348fa7481be3/512x512
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                card_mod:
+                  style: |
+                    ha-card {
+                      background: #00000000;
+                      box-shadow: none;
+                      object-fit: contain;
+                      margin-left: -15px;
+                      scale: 1;
+                      width: 110%;
+                    }
+          - type: vertical-stack
+            cards:
+              - type: custom:bubble-card
+                card_type: pop-up
+                hash: '#meteorologia'
+                button_type: name
+                name: Meteorologia
+                icon: mdi:weather-sunny
+                sub_button: []
+              - type: custom:bubble-card
+                card_type: separator
+              - type: custom:clock-weather-card
+                entity: weather.forecast_home
+                hide_clock: true
+                hide_forecast_section: true
+                weather_icon_type: fill
+                tap_action:
+                  action: none
+                card_mod:
+                  style: |
+                    ha-card {
+                      background: #24252c;
+                      box-shadow: none;
+                    }
+              - type: custom:bubble-card
+                card_type: separator
+                name: Próximas horas
+              - type: custom:clock-weather-card
+                entity: weather.forecast_home
+                hide_clock: true
+                hide_today_section: true
+                hourly_forecast: true
+                forecast_rows: 8
+                tap_action:
+                  action: none
+                card_mod:
+                  style: |
+                    ha-card {
+                      background: #24252c;
+                      box-shadow: none;
+                    }
+              - type: custom:bubble-card
+                card_type: separator
+                name: Próximos dias
+              - type: custom:clock-weather-card
+                entity: weather.forecast_home
+                hide_clock: true
+                hide_today_section: true
+                forecast_rows: 6
+                tap_action:
+                  action: none
+                card_mod:
+                  style: |
+                    ha-card {
+                      background: #24252c;
+                      box-shadow: none;
+                    }
+              - type: custom:bubble-card
+                card_type: separator
+                name: Nascer/Pôr do Sol
+              - type: custom:horizon-card
+                card_mod:
+                  style: |
+                    ha-card {
+                      background: #24252c;
+                      box-shadow: none;
+                    }
+      - type: grid
+        cards:
+          - type: custom:mushroom-chips-card
+            chips:
+              - type: entity
+                entity: person.cristina
+                icon_color: lime
+                icon: mdi:account-circle
+                content_info: name
+              - type: entity
+                entity: person.ruben_barbosa
+                hold_action:
+                  action: none
+                double_tap_action:
+                  action: none
+                use_entity_picture: true
+                icon: mdi:account-circle
+                icon_color: lime
+                content_info: name
+              - type: entity
+                entity: camera.quarto_gu_hd_stream
+                content_info: name
+                tap_action:
+                  action: navigate
+                  navigation_path: '#cameras'
+                hold_action:
+                  action: none
+                double_tap_action:
+                  action: none
+                icon: mdi:video
+                name: Cameras
+                use_entity_picture: false
+              - type: entity
+                entity: climate.ac_sala
+                tap_action:
+                  action: navigate
+                  navigation_path: '#ar-condicionado'
+                name: Ar Condicionado
+                icon: mdi:air-conditioner
+                content_info: name
+              - type: entity
+                entity: media_player.apple_tv_sala
+                tap_action:
+                  action: navigate
+                  navigation_path: '#media'
+                icon: mdi:television-guide
+                content_info: name
+                name: Media
+              - type: entity
+                entity: light.shelly1_ba5bf9
+                icon: mdi:ceiling-light-multiple-outline
+                content_info: name
+                name: Luzes
+                tap_action:
+                  action: navigate
+                  navigation_path: '#luzes'
+            alignment: center
+          - type: custom:bubble-card
+            card_type: separator
+            name: Divisões
+            icon: mdi:floor-plan
+            sub_button: []
+            card_layout: large
+          - type: vertical-stack
+            cards:
+              - type: horizontal-stack
+                cards:
+                  - type: picture-elements
+                    elements:
+                      - type: image
+                        style:
+                          left: 20%
+                          top: 80%
+                          width: 17%
+                        image: >-
+                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                      - type: image
+                        style:
+                          left: 40%
+                          top: 80%
+                          width: 17%
+                        image: >-
+                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                      - type: image
+                        style:
+                          left: 60%
+                          top: 80%
+                          width: 17%
+                        image: >-
+                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                      - type: image
+                        style:
+                          left: 30%
+                          top: 34%
+                          width: 43%
+                        image: >-
+                          /api/image/serve/d265d4c5e6102c64fc3a0805195e0f94/512x512
+                      - type: state-label
+                        entity: climate.ac_suite
+                        attribute: current_temperature
+                        suffix: º
+                        style:
+                          left: 75%
+                          top: 43%
+                          font-size: 40px
+                      - type: state-label
+                        entity: sensor.blank_blank
+                        style:
+                          left: 74%
+                          top: 15%
+                          font-size: 20px
+                        prefix: Entrada
+                      - type: state-icon
+                        icon: mdi:desk-lamp
+                        tap_action:
+                          action: toggle
+                        style:
+                          left: 60%
+                          top: 80%
+                        entity: light.candeeiro_entrada
+                      - type: state-icon
+                        icon: mdi:ceiling-light-multiple-outline
+                        entity: switch.luz_entrada
+                        tap_action:
+                          action: toggle
+                        style:
+                          left: 20%
+                          top: 80%
+                      - type: state-icon
+                        style:
+                          left: 40%
+                          top: 80%
+                        icon: mdi:ceiling-light-multiple-outline
+                        tap_action:
+                          action: toggle
+                        state_color: true
+                        entity: switch.luz_corredor
+                      - type: image
+                        style:
+                          left: 50%
+                          top: 16%
+                          width: 100%
+                        image: >-
+                          /api/image/serve/f4d5e12c6f434eceb78ede028548fc88/512x512
+                        tap_action:
+                          action: navigate
+                          navigation_path: '#suite'
+                    image: /api/image/serve/ec615d34f5228cd62fd744c186a8f0a7/512x512
+                  - type: picture-elements
+                    elements:
+                      - type: image
+                        style:
+                          left: 20%
+                          top: 80%
+                          width: 17%
+                        image: >-
+                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                      - type: image
+                        style:
+                          left: 40%
+                          top: 80%
+                          width: 17%
+                        image: >-
+                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                      - type: image
+                        style:
+                          left: 60%
+                          top: 80%
+                          width: 17%
+                        image: >-
+                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                      - type: image
+                        style:
+                          left: 80%
+                          top: 80%
+                          width: 17%
+                        image: >-
+                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                      - type: image
+                        style:
+                          left: 81%
+                          top: 40%
+                          width: 50%
+                        image: >-
+                          /api/image/serve/41cf8ee406a4a91d974bec6a15428d25/512x512
+                      - type: state-label
+                        suffix: º
+                        style:
+                          left: 24%
+                          top: 43%
+                          font-size: 40px
+                        entity: weather.forecast_home
+                        attribute: temperature
+                      - type: state-label
+                        entity: sensor.blank_blank
+                        prefix: Exterior
+                        style:
+                          left: 28%
+                          top: 15%
+                          font-size: 20px
+                      - type: state-icon
+                        icon: ''
+                        tap_action:
+                          action: toggle
+                        style:
+                          left: 60%
+                          top: 80%
+                        entity: switch.luz_deck
+                      - type: state-icon
+                        icon: ''
+                        tap_action:
+                          action: toggle
+                        style:
+                          left: 20%
+                          top: 80%
+                        entity: switch.postes
+                      - type: state-icon
+                        style:
+                          left: 40%
+                          top: 80%
+                        icon: ''
+                        tap_action:
+                          action: toggle
+                        entity: switch.garagem
+                      - type: state-icon
+                        style:
+                          left: 80%
+                          top: 80%
+                        icon: ''
+                        entity: switch.shelly1_portao
+                        tap_action:
+                          action: more-info
+                      - type: image
+                        style:
+                          left: 50%
+                          top: 16%
+                          width: 100%
+                        image: >-
+                          /api/image/serve/f4d5e12c6f434eceb78ede028548fc88/512x512
+                        tap_action:
+                          action: navigate
+                          navigation_path: '#quartogu'
+                    image: /api/image/serve/ec615d34f5228cd62fd744c186a8f0a7/512x512
+          - type: vertical-stack
+            cards:
+              - type: horizontal-stack
+                cards:
+                  - type: picture-elements
+                    elements:
+                      - type: image
+                        style:
+                          left: 20%
+                          top: 80%
+                          width: 17%
+                        image: >-
+                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                      - type: image
+                        style:
+                          left: 40%
+                          top: 80%
+                          width: 17%
+                        image: >-
+                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                      - type: image
+                        style:
+                          left: 60%
+                          top: 80%
+                          width: 17%
+                        image: >-
+                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                      - type: image
+                        style:
+                          left: 80%
+                          top: 80%
+                          width: 17%
+                        image: >-
+                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                      - type: image
+                        image: >-
+                          /api/image/serve/c66b607cac7161d222a0d9038faf83f9/512x512
+                        style:
+                          left: 30%
+                          top: 40%
+                          width: 50%
+                        tap_action:
+                          action: navigate
+                          navigation_path: '#sala'
+                      - type: state-label
+                        entity: climate.ac_sala
+                        attribute: current_temperature
+                        suffix: º
+                        style:
+                          left: 75%
+                          top: 43%
+                          font-size: 40px
+                      - type: state-label
+                        entity: sensor.blank_blank
+                        prefix: Sala
+                        style:
+                          left: 80%
+                          top: 15%
+                          font-size: 20px
+                      - type: state-icon
+                        icon: mdi:air-conditioner
+                        entity: climate.ac_sala
+                        tap_action:
+                          action: toggle
+                        style:
+                          left: 60%
+                          top: 80%
+                      - type: state-icon
+                        icon: mdi:ceiling-light-multiple-outline
+                        entity: switch.luz_sala_estar
+                        tap_action:
+                          action: navigate
+                          navigation_path: '#sala'
+                        style:
+                          left: 20%
+                          top: 80%
+                      - type: state-icon
+                        style:
+                          left: 40%
+                          top: 80%
+                        icon: mdi:roller-shade-closed
+                        tap_action:
+                          action: more-info
+                        state_color: true
+                        entity: cover.shellyplus2pm_e86beae50630_cover_0
+                      - type: icon
+                        style:
+                          left: 80%
+                          top: 80%
+                        icon: mdi:television
+                        entity: media_player.apple_tv_sala
+                        tap_action:
+                          action: navigate
+                          navigation_path: '#apple-tv-sala'
+                      - type: image
+                        style:
+                          left: 50%
+                          top: 16%
+                          width: 100%
+                        image: >-
+                          /api/image/serve/f4d5e12c6f434eceb78ede028548fc88/512x512
+                        tap_action:
+                          action: navigate
+                          navigation_path: '#sala'
+                    image: /api/image/serve/ec615d34f5228cd62fd744c186a8f0a7/512x512
+                  - type: picture-elements
+                    elements:
+                      - type: image
+                        style:
+                          left: 20%
+                          top: 80%
+                          width: 17%
+                        image: >-
+                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                      - type: image
+                        style:
+                          left: 40%
+                          top: 80%
+                          width: 17%
+                        image: >-
+                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                      - type: image
+                        style:
+                          left: 60%
+                          top: 80%
+                          width: 17%
+                        image: >-
+                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                      - type: image
+                        style:
+                          left: 81%
+                          top: 40%
+                          width: 50%
+                        image: >-
+                          /api/image/serve/a3901c4a5e94d6f2e4af8bcb0a2ac74e/512x512
+                      - type: state-label
+                        entity: climate.ac_escritorio
+                        attribute: current_temperature
+                        suffix: º
+                        style:
+                          left: 24%
+                          top: 43%
+                          font-size: 40px
+                      - type: state-label
+                        entity: sensor.blank_blank
+                        prefix: Escritório
+                        style:
+                          left: 30%
+                          top: 15%
+                          font-size: 20px
+                      - type: state-icon
+                        icon: mdi:air-conditioner
+                        entity: climate.ac_escritorio
+                        tap_action:
+                          action: toggle
+                        style:
+                          left: 60%
+                          top: 80%
+                      - type: state-icon
+                        icon: mdi:ceiling-light-multiple-outline
+                        entity: switch.luz_escritorio
+                        tap_action:
+                          action: toggle
+                        style:
+                          left: 20%
+                          top: 80%
+                      - type: state-icon
+                        style:
+                          left: 40%
+                          top: 80%
+                        icon: mdi:roller-shade-closed
+                        tap_action:
+                          action: more-info
+                        entity: cover.rolo_escritorio
+                      - type: image
+                        style:
+                          left: 50%
+                          top: 16%
+                          width: 100%
+                        image: >-
+                          /api/image/serve/f4d5e12c6f434eceb78ede028548fc88/512x512
+                        tap_action:
+                          action: navigate
+                          navigation_path: '#escritorio'
+                    image: /api/image/serve/ec615d34f5228cd62fd744c186a8f0a7/512x512
+          - type: vertical-stack
+            cards:
+              - type: horizontal-stack
+                cards:
+                  - type: picture-elements
+                    elements:
+                      - type: image
+                        style:
+                          left: 20%
+                          top: 80%
+                          width: 17%
+                        image: >-
+                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                      - type: image
+                        style:
+                          left: 40%
+                          top: 80%
+                          width: 17%
+                        image: >-
+                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                      - type: image
+                        style:
+                          left: 60%
+                          top: 80%
+                          width: 17%
+                        image: >-
+                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                      - type: image
+                        style:
+                          left: 80%
+                          top: 80%
+                          width: 17%
+                        image: >-
+                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                      - type: image
+                        style:
+                          left: 30%
+                          top: 40%
+                          width: 50%
+                        image: >-
+                          /api/image/serve/cb10bf363b051d4559f903fe3aa4a150/512x512
+                      - type: state-label
+                        entity: climate.ac_suite
+                        attribute: current_temperature
+                        suffix: º
+                        style:
+                          left: 75%
+                          top: 43%
+                          font-size: 40px
+                      - type: state-label
+                        entity: sensor.blank_blank
+                        style:
+                          left: 78%
+                          top: 15%
+                          font-size: 20px
+                        prefix: Suite
+                      - type: state-icon
+                        icon: mdi:air-conditioner
+                        entity: climate.ac_suite
+                        tap_action:
+                          action: toggle
+                        style:
+                          left: 60%
+                          top: 80%
+                      - type: state-icon
+                        icon: mdi:ceiling-light-multiple-outline
+                        entity: switch.luz_suite
+                        tap_action:
+                          action: toggle
+                        style:
+                          left: 20%
+                          top: 80%
+                      - type: state-icon
+                        style:
+                          left: 40%
+                          top: 80%
+                        icon: mdi:roller-shade-closed
+                        tap_action:
+                          action: more-info
+                        state_color: true
+                        entity: cover.rolo_suite
+                      - type: icon
+                        style:
+                          left: 80%
+                          top: 80%
+                        icon: mdi:television
+                        entity: media_player.apple_tv_sala
+                        tap_action:
+                          action: navigate
+                          navigation_path: '#apple-tv-quarto'
+                      - type: image
+                        style:
+                          left: 50%
+                          top: 16%
+                          width: 100%
+                        image: >-
+                          /api/image/serve/f4d5e12c6f434eceb78ede028548fc88/512x512
+                        tap_action:
+                          action: navigate
+                          navigation_path: '#suite'
+                    image: /api/image/serve/ec615d34f5228cd62fd744c186a8f0a7/512x512
+                  - type: picture-elements
+                    elements:
+                      - type: image
+                        style:
+                          left: 20%
+                          top: 80%
+                          width: 17%
+                        image: >-
+                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                      - type: image
+                        style:
+                          left: 40%
+                          top: 80%
+                          width: 17%
+                        image: >-
+                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                      - type: image
+                        style:
+                          left: 60%
+                          top: 80%
+                          width: 17%
+                        image: >-
+                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                      - type: image
+                        style:
+                          left: 80%
+                          top: 80%
+                          width: 17%
+                        image: >-
+                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                      - type: image
+                        style:
+                          left: 81%
+                          top: 40%
+                          width: 50%
+                        image: >-
+                          /api/image/serve/f005689e0679c24d8254fd469a29cacf/512x512
+                      - type: state-label
+                        entity: climate.ac_gustavo
+                        attribute: current_temperature
+                        suffix: º
+                        style:
+                          left: 24%
+                          top: 43%
+                          font-size: 40px
+                      - type: state-label
+                        entity: sensor.blank_blank
+                        prefix: Quarto Gu
+                        style:
+                          left: 30%
+                          top: 15%
+                          font-size: 20px
+                      - type: state-icon
+                        icon: mdi:air-conditioner
+                        entity: climate.ac_gustavo
+                        tap_action:
+                          action: toggle
+                        style:
+                          left: 60%
+                          top: 80%
+                      - type: state-icon
+                        icon: mdi:ceiling-light-multiple-outline
+                        entity: switch.luz_sala_estar
+                        tap_action:
+                          action: toggle
+                        style:
+                          left: 20%
+                          top: 80%
+                      - type: state-icon
+                        style:
+                          left: 40%
+                          top: 80%
+                        icon: mdi:desk-lamp
+                        tap_action:
+                          action: toggle
+                        entity: light.candeeiro_gu
+                      - type: state-icon
+                        style:
+                          left: 80%
+                          top: 80%
+                        icon: mdi:roller-shade-closed
+                        entity: cover.rolo_quarto_gu
+                        tap_action:
+                          action: more-info
+                      - type: image
+                        style:
+                          left: 50%
+                          top: 16%
+                          width: 100%
+                        image: >-
+                          /api/image/serve/f4d5e12c6f434eceb78ede028548fc88/512x512
+                        tap_action:
+                          action: navigate
+                          navigation_path: '#quartogu'
+                    image: /api/image/serve/ec615d34f5228cd62fd744c186a8f0a7/512x512
+          - type: vertical-stack
+            cards:
+              - type: horizontal-stack
+                cards:
+                  - type: picture-elements
+                    elements:
+                      - type: image
+                        style:
+                          left: 20%
+                          top: 80%
+                          width: 17%
+                        image: >-
+                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                      - type: image
+                        style:
+                          left: 40%
+                          top: 80%
+                          width: 17%
+                        image: >-
+                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                      - type: image
+                        style:
+                          left: 30%
+                          top: 40%
+                          width: 50%
+                        image: >-
+                          /api/image/serve/d1ca1988b821ceb39c13deca0e305d6b/512x512
+                      - type: state-label
+                        entity: climate.ac_sala
+                        attribute: current_temperature
+                        suffix: º
+                        style:
+                          left: 75%
+                          top: 43%
+                          font-size: 40px
+                      - type: state-label
+                        entity: sensor.blank_blank
+                        prefix: Cozinha
+                        style:
+                          left: 73%
+                          top: 15%
+                          font-size: 20px
+                      - type: state-icon
+                        icon: mdi:ceiling-light-multiple-outline
+                        entity: switch.luz_cozinha
+                        tap_action:
+                          action: toggle
+                        style:
+                          left: 20%
+                          top: 80%
+                      - type: state-icon
+                        style:
+                          left: 40%
+                          top: 80%
+                        icon: mdi:roller-shade-closed
+                        tap_action:
+                          action: more-info
+                        state_color: true
+                        entity: cover.rolo_cozinha
+                    image: /api/image/serve/ec615d34f5228cd62fd744c186a8f0a7/512x512
+                  - type: picture-elements
+                    elements:
+                      - type: image
+                        style:
+                          left: 20%
+                          top: 80%
+                          width: 17%
+                        image: >-
+                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                      - type: image
+                        style:
+                          left: 81%
+                          top: 40%
+                          width: 50%
+                        image: >-
+                          /api/image/serve/342bed849a7d3e382dc4415f319a87e6/512x512
+                      - type: state-label
+                        entity: climate.ac_escritorio
+                        attribute: current_temperature
+                        suffix: º
+                        style:
+                          left: 24%
+                          top: 43%
+                          font-size: 40px
+                      - type: state-label
+                        entity: sensor.blank_blank
+                        prefix: Despensa
+                        style:
+                          left: 30%
+                          top: 15%
+                          font-size: 20px
+                      - type: state-icon
+                        icon: mdi:ceiling-light-multiple-outline
+                        entity: switch.luz_despensa
+                        tap_action:
+                          action: toggle
+                        style:
+                          left: 20%
+                          top: 80%
+                    image: /api/image/serve/ec615d34f5228cd62fd744c186a8f0a7/512x512
+          - type: vertical-stack
+            cards:
+              - type: custom:bubble-card
+                name: Sala
+                icon: mdi:sofa
+                columns: 2
+                rows: 2
+                card_type: pop-up
+                hash: '#sala'
+                show_header: true
+                button_type: name
+                scrolling_effect: true
+                margin_top_desktop: 10px
+                hide_backdrop: true
+                sub_button:
+                  - show_attribute: true
+                    attribute: current_temperature
+                    show_arrow: false
+                    entity: climate.ac_sala
+                    icon: mdi:thermometer
+                    show_background: false
+                    show_icon: true
+                    show_state: false
+                styles: Optional - Backdrop blur
+              - type: custom:bubble-card
+                card_type: separator
+                name: ''
+                icon: ''
+                sub_button: []
+                card_layout: normal
+              - type: custom:bubble-card
+                name: Luzes
+                icon: mdi:lightbulb
+                card_type: empty-column
+                columns: 2
+                rows: 2
+              - type: custom:bubble-card
+                card_type: climate
+                entity: climate.ac_sala
+                sub_button:
+                  - name: HVAC modes menu
+                    select_attribute: hvac_modes
+                    state_background: false
+                    show_arrow: false
+                show_attribute: true
+                attribute: current_temperature
+                icon: mdi:air-conditioner
+                card_layout: large
+                state_color: true
+              - type: custom:bubble-card
+                name: Luzes
+                icon: mdi:lightbulb
+                card_type: empty-column
+                columns: 2
+                rows: 2
+              - type: custom:bubble-card
+                card_type: cover
+                entity: cover.shellyplus2pm_e86beae50630_cover_0
+                scrolling_effect: true
+                force_icon: false
+                show_state: true
+                icon_down: ''
+                show_icon: false
+                show_last_changed: true
+                name: Rolo Sala
+                card_layout: large
+              - type: custom:bubble-card
+                name: Luzes
+                icon: mdi:lightbulb
+                card_type: empty-column
+                columns: 2
+                rows: 2
+              - type: horizontal-stack
+                cards:
+                  - type: custom:bubble-card
+                    card_type: button
+                    entity: switch.luz_sala_estar
+                  - type: custom:bubble-card
+                    card_type: button
+                    button_type: slider
+                    entity: light.candeeiro_sala
+                    tap_action:
+                      action: toggle
+                    show_icon: true
+              - type: custom:bubble-card
+                name: Luzes
+                icon: mdi:lightbulb
+                card_type: empty-column
+                columns: 2
+                rows: 2
+              - type: horizontal-stack
+                cards:
+                  - type: custom:bubble-card
+                    card_type: button
+                    entity: switch.luz_sala_jantar
+                  - type: custom:bubble-card
+                    card_type: button
+                    button_type: switch
+                    entity: switch.arvore_luz
+                    tap_action:
+                      action: toggle
+                    show_icon: true
+                    show_state: false
+              - type: custom:bubble-card
+                name: Luzes
+                icon: mdi:lightbulb
+                card_type: empty-column
+                columns: 2
+                rows: 2
+              - type: horizontal-stack
+                cards:
+                  - type: custom:bubble-card
+                    card_type: media-player
+                    entity: media_player.lg_webos_tv
+                    hide:
+                      next_button: true
+                      previous_button: true
+                      volume_button: true
+                    scrolling_effect: false
+                    show_icon: true
+                    show_name: true
+                    icon: mdi:television
+                  - type: custom:bubble-card
+                    hide:
+                      volume_button: true
+                      next_button: true
+                      previous_button: true
+                      play_pause_button: true
+                      power_button: true
+                    name: Apple TV - Sala
+                    icon: mdi:apple
+                    show_name: true
+                    show_state: true
+                    show_attribute: true
+                    attribute: app_name
+                    card_type: media-player
+                    entity: media_player.apple_tv_sala
+                    sub_button:
+                      - entity: media_player.apple_tv_sala
+                        icon: mdi:dots-horizontal
+                        show_background: false
+                        tap_action:
+                          action: navigate
+                          navigation_path: '#appletvsala'
+                    tap_action:
+                      action: navigate
+                      navigation_path: '#appletvsala'
+                    button_action:
+                      tap_action:
+                        action: navigate
+                        navigation_path: '#apple-tv-sala'
+          - type: vertical-stack
+            cards:
+              - type: custom:bubble-card
+                name: Suite
+                icon: mdi:sofa
+                columns: 2
+                rows: 2
+                card_type: pop-up
+                hash: '#suite'
+                show_header: true
+                button_type: name
+                scrolling_effect: true
+                margin_top_desktop: 10px
+                hide_backdrop: true
+                sub_button:
+                  - show_attribute: true
+                    attribute: current_temperature
+                    show_arrow: false
+                    entity: climate.ac_suite
+                    icon: mdi:thermometer
+                    show_background: false
+                    show_icon: true
+                    show_state: false
+                styles: Optional - Backdrop blur
+              - type: custom:bubble-card
+                card_type: separator
+                name: ''
+                icon: ''
+                sub_button: []
+                card_layout: normal
+              - type: custom:bubble-card
+                name: Luzes
+                icon: mdi:lightbulb
+                card_type: empty-column
+                columns: 2
+                rows: 2
+              - type: custom:bubble-card
+                card_type: climate
+                entity: climate.ac_suite
+                sub_button:
+                  - name: HVAC modes menu
+                    select_attribute: hvac_modes
+                    state_background: false
+                    show_arrow: false
+                show_attribute: true
+                attribute: current_temperature
+                icon: mdi:air-conditioner
+              - type: custom:bubble-card
+                name: Luzes
+                icon: mdi:lightbulb
+                card_type: empty-column
+                columns: 2
+                rows: 2
+              - type: custom:bubble-card
+                card_type: cover
+                entity: cover.rolo_suite
+                scrolling_effect: true
+                force_icon: false
+                show_state: true
+                icon_down: ''
+                show_icon: false
+                show_last_changed: true
+                name: Rolo Suite
+                card_layout: large
+              - type: custom:bubble-card
+                name: Luzes
+                icon: mdi:lightbulb
+                card_type: empty-column
+                columns: 2
+                rows: 2
+              - type: horizontal-stack
+                cards:
+                  - type: custom:bubble-card
+                    card_type: button
+                    entity: switch.luz_suite
+                    icon: mdi:ceiling-light-multiple-outline
+                  - type: custom:bubble-card
+                    card_type: button
+                    entity: switch.wc_suite
+                    icon: mdi:ceiling-light-multiple-outline
+              - type: custom:bubble-card
+                name: Luzes
+                icon: mdi:lightbulb
+                card_type: empty-column
+                columns: 2
+                rows: 2
+              - type: horizontal-stack
+                cards:
+                  - type: custom:bubble-card
+                    card_type: button
+                    button_type: slider
+                    entity: light.candeeiro_mami
+                    tap_action:
+                      action: toggle
+                    show_icon: true
+                    slider_live_update: true
+                    sub_button:
+                      - entity: light.candeeiro_mami
+                        show_icon: true
+                        icon: mdi:dots-horizontal
+                        show_background: false
+                        show_arrow: false
+                        show_attribute: false
+                        attribute: effect
+                  - type: custom:bubble-card
+                    card_type: button
+                    button_type: slider
+                    entity: light.candeeiro_papi
+                    tap_action:
+                      action: toggle
+                    show_icon: true
+                    slider_live_update: true
+                    sub_button:
+                      - entity: light.candeeiro_mami
+                        show_icon: true
+                        icon: mdi:dots-horizontal
+                        show_background: false
+                        show_arrow: false
+                        show_attribute: false
+                        attribute: effect
+              - type: custom:bubble-card
+                name: Luzes
+                icon: mdi:lightbulb
+                card_type: empty-column
+                columns: 2
+                rows: 2
+              - type: horizontal-stack
+                cards:
+                  - type: custom:bubble-card
+                    hide:
+                      volume_button: true
+                      next_button: true
+                      previous_button: true
+                      play_pause_button: true
+                      power_button: true
+                    name: Apple TV - Suite
+                    icon: mdi:apple
+                    show_name: true
+                    show_state: true
+                    show_attribute: true
+                    attribute: app_name
+                    card_type: media-player
+                    sub_button:
+                      - entity: media_player.apple_tv_sala
+                        icon: mdi:dots-horizontal
+                        show_background: false
+                        tap_action:
+                          action: navigate
+                          navigation_path: '#apple-tv-sala'
+                    tap_action:
+                      action: navigate
+                      navigation_path: '#apple-tv-sala'
+                    button_action:
+                      tap_action:
+                        action: navigate
+                        navigation_path: '#apple-tv-sala'
+                    entity: media_player.apple_tv_quarto
+          - type: vertical-stack
+            cards:
+              - type: custom:bubble-card
+                name: Apple TV
+                card_type: pop-up
+                hash: '#media'
+                icon: mdi:apple
+                button_type: state
+                entity: media_player.apple_tv_sala
+                show_attribute: false
+                show_state: false
+                sub_button: []
+              - type: custom:bubble-card
+                card_type: separator
+              - type: custom:bubble-card
+                name: Próximos dias
+                card_type: empty-column
+              - type: horizontal-stack
+                cards:
+                  - type: custom:bubble-card
+                    card_type: empty-column
+                    card_layout: normal
+                    columns: 1
+                    rows: 1
+                  - type: custom:button-card
+                    entity: media_player.apple_tv_sala
+                    show_name: false
+                    show_icon: false
+                    tap_action:
+                      action: navigate
+                      navigation_path: '#appletvsala'
+                    styles:
+                      card:
+                        - padding: 0
+                        - height: 300px
+                        - width: 75px
+                        - border-radius: 0
+                        - background-image: >-
+                            url('/api/image/serve/b8c3af151f57eaf7bfabb28b07a3c242/512x512')
+                        - background-repeat: no-repeat
+                        - background-size: cover
+                        - background-position: center
+                  - type: custom:bubble-card
+                    card_type: empty-column
+                  - type: custom:button-card
+                    entity: media_player.apple_tv_quarto
+                    show_name: false
+                    show_icon: false
+                    tap_action:
+                      action: navigate
+                      navigation_path: '#appletvquarto'
+                    styles:
+                      card:
+                        - padding: 0
+                        - height: 300px
+                        - width: 90px
+                        - border-radius: 0
+                        - background-image: >-
+                            url('/api/image/serve/6bc026dc2594c8e2e95023b8be2127e2/512x512')
+                        - background-repeat: no-repeat
+                        - background-size: cover
+                        - background-position: center
+                  - type: custom:bubble-card
+                    card_type: empty-column
+          - type: vertical-stack
+            cards:
+              - type: custom:bubble-card
+                name: Apple TV - Sala
+                card_type: pop-up
+                hash: '#appletvsala'
+                icon: mdi:apple
+                button_type: state
+                entity: media_player.apple_tv_sala
+                show_attribute: false
+                show_state: false
+                sub_button:
+                  - entity: media_player.apple_tv_sala
+                    show_attribute: true
+                    attribute: app_name
+                    show_background: false
+                    show_icon: false
+              - type: custom:bubble-card
+                card_type: separator
+              - type: custom:bubble-card
+                name: Próximos dias
+                card_type: empty-column
+              - type: custom:firemote-card
+                entity: media_player.apple_tv_sala
+                device_family: apple-tv
+                device_type: appletv-4k-gen3
+                compatibility_mode: default
+                apple_tv_remote_entity: remote.apple_tv
+                scale: '100'
+                app_launch_1: netflix
+                app_launch_2: disney-plus
+                app_launch_3: max
+                app_launch_4: prime-video
+                app_launch_5: apple-tv
+                app_launch_6: i-play-tv
+          - type: vertical-stack
+            cards:
+              - type: custom:bubble-card
+                name: Apple TV - Quarto
+                card_type: pop-up
+                hash: '#appletvquarto'
+                icon: mdi:apple
+                button_type: state
+                entity: media_player.apple_tv_sala
+                show_attribute: false
+                show_state: false
+                sub_button:
+                  - entity: media_player.apple_tv_quarto
+                    show_attribute: true
+                    attribute: app_name
+                    show_background: false
+                    show_icon: false
+              - type: custom:bubble-card
+                card_type: separator
+              - type: custom:bubble-card
+                name: Próximos dias
+                card_type: empty-column
+              - type: custom:firemote-card
+                entity: media_player.apple_tv_quarto
+                device_family: apple-tv
+                device_type: appletv-4k-gen1
+                compatibility_mode: default
+                apple_tv_remote_entity: remote.quarto
+                scale: '106'
+                app_launch_1: netflix
+                app_launch_2: disney-plus
+                app_launch_3: max
+                app_launch_4: prime-video
+                app_launch_5: apple-tv
+                app_launch_6: i-play-tv
+          - type: vertical-stack
+            cards:
+              - type: custom:bubble-card
+                card_type: pop-up
+                hash: '#ar-condicionado'
+                button_type: name
+                name: Ar Condicionado
+                icon: mdi:air-conditioner
+              - type: custom:bubble-card
+                card_type: separator
+              - type: custom:bubble-card
+                card_type: empty-column
+              - type: horizontal-stack
+                cards:
+                  - type: custom:mushroom-climate-card
+                    entity: climate.ac_sala
+                    layout: vertical
+                    icon_type: icon
+                    hvac_modes:
+                      - auto
+                      - heat
+                      - cool
+                    show_temperature_control: true
+                    fill_container: true
+                  - type: custom:mushroom-climate-card
+                    layout: vertical
+                    icon_type: icon
+                    hvac_modes:
+                      - auto
+                      - heat
+                      - cool
+                    show_temperature_control: true
+                    fill_container: true
+                    entity: climate.ac_escritorio
+              - type: custom:bubble-card
+                card_type: empty-column
+              - type: horizontal-stack
+                cards:
+                  - type: custom:mushroom-climate-card
+                    icon_type: icon
+                    hvac_modes:
+                      - auto
+                      - heat
+                      - cool
+                    show_temperature_control: true
+                    fill_container: true
+                    entity: climate.ac_suite
+                    layout: vertical
+                  - type: custom:mushroom-climate-card
+                    icon_type: icon
+                    hvac_modes:
+                      - auto
+                      - heat
+                      - cool
+                    show_temperature_control: true
+                    fill_container: true
+                    entity: climate.ac_gustavo
+                    icon: mdi:air-filter
+                    layout: vertical
+          - type: vertical-stack
+            cards:
+              - type: custom:bubble-card
+                card_type: pop-up
+                hash: '#cameras'
+                button_type: name
+                name: Cameras
+                icon: mdi:webcam
+              - type: custom:bubble-card
+                card_type: separator
+              - type: custom:bubble-card
+                card_type: empty-column
+              - type: picture-elements
+                elements:
+                  - type: conditional
+                    conditions:
+                      - condition: state
+                        entity: switch.sala_privacy
+                        state: 'on'
+                    elements:
+                      - type: icon
+                        style:
+                          left: 90%
+                          top: 85%
+                        icon: mdi:eye-off
+                        tap_action:
+                          action: toggle
+                        entity: switch.sala_privacy
+                  - type: conditional
+                    conditions:
+                      - condition: state
+                        entity: switch.sala_privacy
+                        state_not: 'on'
+                    elements:
+                      - type: icon
+                        icon: mdi:eye-outline
+                        entity: switch.sala_privacy
+                        tap_action:
+                          action: toggle
+                        style:
+                          left: 90%
+                          top: 85%
+                image: https://demo.home-assistant.io/stub_config/floorplan.png
+                camera_image: camera.sala_hd_stream
+                camera_view: live
+                theme: Graphite Auto
+              - type: custom:bubble-card
+                card_type: empty-column
+              - type: picture-elements
+                elements:
+                  - type: conditional
+                    conditions:
+                      - condition: state
+                        entity: switch.quarto_gu_privacy
+                        state: 'on'
+                    elements:
+                      - type: icon
+                        style:
+                          left: 90%
+                          top: 85%
+                        icon: mdi:eye-off
+                        tap_action:
+                          action: toggle
+                        entity: switch.quarto_gu_privacy
+                  - type: conditional
+                    conditions:
+                      - condition: state
+                        entity: switch.quarto_gu_privacy
+                        state_not: 'on'
+                    elements:
+                      - type: icon
+                        icon: mdi:eye-outline
+                        entity: switch.quarto_gu_privacy
+                        tap_action:
+                          action: toggle
+                        style:
+                          left: 90%
+                          top: 85%
+                image: https://demo.home-assistant.io/stub_config/floorplan.png
+                camera_image: camera.quarto_gu_hd_stream
+                camera_view: live
+                theme: Graphite Auto
+          - type: custom:bubble-card
+            card_type: pop-up
+            hash: '#ar-condicionado'
+            button_type: name
+            name: Ar Condicionado
+            icon: mdi:air-conditioner
+          - type: vertical-stack
+            cards:
+              - type: custom:bubble-card
+                name: Luzes
+                icon: mdi:ceiling-light-multiple-outline
+                columns: 2
+                rows: 2
+                card_type: pop-up
+                hash: '#luzes'
+                show_header: true
+                button_type: name
+                scrolling_effect: true
+                margin_top_desktop: 10px
+                hide_backdrop: true
+                sub_button: []
+                styles: Optional - Backdrop blur
+              - type: custom:bubble-card
+                card_type: separator
+                name: Sala
+                icon: ''
+                sub_button: []
+                card_layout: normal
+              - type: custom:bubble-card
+                name: Luzes
+                icon: mdi:lightbulb
+                card_type: empty-column
+                columns: 2
+                rows: 2
+              - type: horizontal-stack
+                cards:
+                  - type: custom:bubble-card
+                    card_type: button
+                    entity: switch.luz_sala_estar
+                  - type: custom:bubble-card
+                    card_type: button
+                    button_type: slider
+                    entity: light.candeeiro_sala
+                    tap_action:
+                      action: toggle
+                    show_icon: true
+              - type: horizontal-stack
+                cards:
+                  - type: custom:bubble-card
+                    card_type: button
+                    entity: switch.luz_sala_jantar
+                    show_state: true
+                  - type: custom:bubble-card
+                    card_type: button
+                    button_type: switch
+                    entity: switch.arvore_luz
+                    tap_action:
+                      action: toggle
+                    show_icon: true
+              - type: custom:bubble-card
+                name: Luzes
+                icon: mdi:lightbulb
+                card_type: empty-column
+                columns: 2
+                rows: 2
+              - type: custom:bubble-card
+                card_type: separator
+                name: Suite
+                icon: ''
+                sub_button: []
+                card_layout: normal
+              - type: custom:bubble-card
+                name: Luzes
+                icon: mdi:lightbulb
+                card_type: empty-column
+                columns: 2
+                rows: 2
+              - type: horizontal-stack
+                cards:
+                  - type: custom:bubble-card
+                    card_type: button
+                    entity: switch.luz_suite
+                    show_state: true
+                  - type: custom:bubble-card
+                    card_type: button
+                    button_type: switch
+                    entity: switch.wc_suite
+                    tap_action:
+                      action: toggle
+                    show_icon: true
+              - type: horizontal-stack
+                cards:
+                  - type: custom:bubble-card
+                    card_type: button
+                    entity: light.candeeiro_papi
+                    show_state: true
+                    button_type: slider
+                  - type: custom:bubble-card
+                    card_type: button
+                    button_type: slider
+                    entity: light.candeeiro_mami
+                    tap_action:
+                      action: toggle
+                    show_icon: true
+              - type: custom:bubble-card
+                name: Luzes
+                icon: mdi:lightbulb
+                card_type: empty-column
+                columns: 2
+                rows: 2
+              - type: custom:bubble-card
+                card_type: separator
+                name: Cozinha
+                icon: ''
+                sub_button: []
+                card_layout: normal
+              - type: custom:bubble-card
+                name: Luzes
+                icon: mdi:lightbulb
+                card_type: empty-column
+                columns: 2
+                rows: 2
+              - type: horizontal-stack
+                cards:
+                  - type: custom:bubble-card
+                    card_type: button
+                    entity: switch.luz_cozinha
+                    show_state: true
+              - type: custom:bubble-card
+                name: Luzes
+                icon: mdi:lightbulb
+                card_type: empty-column
+                columns: 2
+                rows: 2
+              - type: custom:bubble-card
+                card_type: separator
+                name: Escritório
+                icon: ''
+                sub_button: []
+                card_layout: normal
+              - type: custom:bubble-card
+                name: Luzes
+                icon: mdi:lightbulb
+                card_type: empty-column
+                columns: 2
+                rows: 2
+              - type: horizontal-stack
+                cards:
+                  - type: custom:bubble-card
+                    card_type: button
+                    entity: switch.luz_escritorio
+                    show_state: true
+              - type: custom:bubble-card
+                name: Luzes
+                icon: mdi:lightbulb
+                card_type: empty-column
+                columns: 2
+                rows: 2
+              - type: custom:bubble-card
+                card_type: separator
+                name: Quarto Gu
+                icon: ''
+                sub_button: []
+                card_layout: normal
+              - type: custom:bubble-card
+                name: Luzes
+                icon: mdi:lightbulb
+                card_type: empty-column
+                columns: 2
+                rows: 2
+              - type: horizontal-stack
+                cards:
+                  - type: custom:bubble-card
+                    card_type: button
+                    entity: light.candeeiro_papi
+                    show_state: true
+                    button_type: switch
+                  - type: custom:bubble-card
+                    card_type: button
+                    button_type: slider
+                    entity: light.candeeiro_gu
+                    tap_action:
+                      action: toggle
+                    show_icon: true
+              - type: custom:bubble-card
+                name: Luzes
+                icon: mdi:lightbulb
+                card_type: empty-column
+                columns: 2
+                rows: 2
+              - type: custom:bubble-card
+                card_type: separator
+                name: Despensa
+                icon: ''
+                sub_button: []
+                card_layout: normal
+              - type: custom:bubble-card
+                name: Luzes
+                icon: mdi:lightbulb
+                card_type: empty-column
+                columns: 2
+                rows: 2
+              - type: horizontal-stack
+                cards:
+                  - type: custom:bubble-card
+                    card_type: button
+                    entity: switch.luz_despensa
+                    show_state: true
+              - type: custom:bubble-card
+                name: Luzes
+                icon: mdi:lightbulb
+                card_type: empty-column
+                columns: 2
+                rows: 2
+              - type: custom:bubble-card
+                card_type: separator
+                name: Zonas Comuns
+                icon: ''
+                sub_button: []
+                card_layout: normal
+              - type: custom:bubble-card
+                name: Luzes
+                icon: mdi:lightbulb
+                card_type: empty-column
+                columns: 2
+                rows: 2
+              - type: horizontal-stack
+                cards:
+                  - type: custom:bubble-card
+                    card_type: button
+                    entity: light.candeeiro_entrada
+                    show_state: true
+                    button_type: slider
+              - type: horizontal-stack
+                cards:
+                  - type: custom:bubble-card
+                    card_type: button
+                    show_state: true
+                    button_type: switch
+                    entity: switch.luz_corredor
+                  - type: custom:bubble-card
+                    card_type: button
+                    button_type: switch
+                    entity: switch.luz_entrada
+                    tap_action:
+                      action: toggle
+                    show_icon: true
+                    show_state: true
+              - type: custom:bubble-card
+                name: Luzes
+                icon: mdi:lightbulb
+                card_type: empty-column
+                columns: 2
+                rows: 2
+              - type: custom:bubble-card
+                card_type: separator
+                name: Jardim
+                icon: ''
+                sub_button: []
+                card_layout: normal
+              - type: custom:bubble-card
+                name: Luzes
+                icon: mdi:lightbulb
+                card_type: empty-column
+                columns: 2
+                rows: 2
+              - type: custom:bubble-card
+                card_type: button
+                entity: switch.luz_deck
+                show_state: true
+              - type: horizontal-stack
+                cards:
+                  - type: custom:bubble-card
+                    card_type: button
+                    show_state: true
+                    button_type: switch
+                    entity: switch.garagem
+                  - type: custom:bubble-card
+                    card_type: button
+                    button_type: switch
+                    entity: switch.postes
+                    tap_action:
+                      action: toggle
+                    show_icon: true
+                    show_state: true
+        column_span: 1
+    type: sections
+    background:
+      opacity: 77
+      alignment: center
+      size: auto
+      repeat: repeat
+      attachment: fixed
+    cards: []
+    max_columns: 4
+    dense_section_placement: false
