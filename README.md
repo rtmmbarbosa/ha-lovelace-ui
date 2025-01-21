@@ -43,7 +43,7 @@ I have to thank aswell to this youtubers and for their channels because they are
 ### Snapshots
 
 
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; align-items: center;">
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; align-items: center;">
   <img src="screenshots/main_menu.PNG" alt="Main Menu" style="width: 40%; height: auto;">
   <img src="screenshots/living_room.PNG" alt="Living Room Menu" style="width: 40%; height: auto;">
   <img src="screenshots/climate.PNG" alt="Climate Menu" style="width: 40%; height: auto;">
