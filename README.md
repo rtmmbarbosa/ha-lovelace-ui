@@ -42,3 +42,15 @@ I have to thank aswell to this youtubers and for their channels because they are
 
 ### Snapshots
 
+
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+  <img src="screenshots/main_menu.PNG" alt="Main Menu" style="width: 100%; height: auto;">
+  <img src="screenshots/living_room.PNG" alt="Living Room Menu" style="width: 100%; height: auto;">
+  <img src="screenshots/climate.PNG" alt="Climate Menu" style="width: 100%; height: auto;">
+  <img src="screenshots/lights.PNG" alt="Lights Menu" style="width: 100%; height: auto;">
+  <img src="screenshots/select_media.PNG" alt="Screenshot 6" style="width: 100%; height: auto;">
+  <img src="screenshots/appletv_remote.PNG" alt="Screenshot 6" style="width: 100%; height: auto;">
+  <img src="screenshots/weather.PNG" alt="Weather Menu" style="width: 100%; height: auto;">
+  <img src="screenshots/cameras.png" alt="Cameras Menu" style="width: 100%; height: auto;">
+</div>
