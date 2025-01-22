@@ -32,6 +32,9 @@ First we need to thank all of those who make HA and kept it free for all of us t
 - Ultra Vehicle Card:
     - https://github.com/WJDDesigns/Ultra-Vehicle-Card
 
+- Clock Weather Card
+    - https://github.com/pkissling/clock-weather-card
+
 ### Youtube channels
 
 I have to thank aswell to this youtubers and for their channels because they are the ones who really teach me what i need to learn in order to do this!
