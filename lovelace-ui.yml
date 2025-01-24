@@ -53,9 +53,9 @@ views:
                       background: #00000000;
                       box-shadow: none;
                       object-fit: contain;
-                      margin-left: -15px;
+                      margin-left: 10px;
                       scale: 1;
-                      width: 110%;
+                      width: 80%;
                     }
           - type: vertical-stack
             cards:
@@ -187,667 +187,624 @@ views:
             icon: mdi:floor-plan
             sub_button: []
             card_layout: large
-          - type: vertical-stack
+          - type: horizontal-stack
             cards:
-              - type: horizontal-stack
-                cards:
-                  - type: picture-elements
-                    elements:
-                      - type: image
-                        style:
-                          left: 20%
-                          top: 80%
-                          width: 17%
-                        image: >-
-                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
-                      - type: image
-                        style:
-                          left: 40%
-                          top: 80%
-                          width: 17%
-                        image: >-
-                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
-                      - type: image
-                        style:
-                          left: 60%
-                          top: 80%
-                          width: 17%
-                        image: >-
-                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
-                      - type: image
-                        style:
-                          left: 30%
-                          top: 34%
-                          width: 43%
-                        image: >-
-                          /api/image/serve/d265d4c5e6102c64fc3a0805195e0f94/512x512
-                      - type: state-label
-                        entity: climate.ac_suite
-                        attribute: current_temperature
-                        suffix: º
-                        style:
-                          left: 75%
-                          top: 43%
-                          font-size: 40px
-                      - type: state-label
-                        entity: sensor.blank_blank
-                        style:
-                          left: 74%
-                          top: 15%
-                          font-size: 20px
-                        prefix: Entrada
-                      - type: state-icon
-                        icon: mdi:desk-lamp
-                        tap_action:
-                          action: toggle
-                        style:
-                          left: 60%
-                          top: 80%
-                        entity: light.candeeiro_entrada
-                      - type: state-icon
-                        icon: mdi:ceiling-light-multiple-outline
-                        entity: switch.luz_entrada
-                        tap_action:
-                          action: toggle
-                        style:
-                          left: 20%
-                          top: 80%
-                      - type: state-icon
-                        style:
-                          left: 40%
-                          top: 80%
-                        icon: mdi:ceiling-light-multiple-outline
-                        tap_action:
-                          action: toggle
-                        state_color: true
-                        entity: switch.luz_corredor
-                      - type: image
-                        style:
-                          left: 50%
-                          top: 16%
-                          width: 100%
-                        image: >-
-                          /api/image/serve/f4d5e12c6f434eceb78ede028548fc88/512x512
-                        tap_action:
-                          action: navigate
-                          navigation_path: '#suite'
-                    image: /api/image/serve/ec615d34f5228cd62fd744c186a8f0a7/512x512
-                  - type: picture-elements
-                    elements:
-                      - type: image
-                        style:
-                          left: 20%
-                          top: 80%
-                          width: 17%
-                        image: >-
-                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
-                      - type: image
-                        style:
-                          left: 40%
-                          top: 80%
-                          width: 17%
-                        image: >-
-                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
-                      - type: image
-                        style:
-                          left: 60%
-                          top: 80%
-                          width: 17%
-                        image: >-
-                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
-                      - type: image
-                        style:
-                          left: 80%
-                          top: 80%
-                          width: 17%
-                        image: >-
-                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
-                      - type: image
-                        style:
-                          left: 81%
-                          top: 40%
-                          width: 50%
-                        image: >-
-                          /api/image/serve/41cf8ee406a4a91d974bec6a15428d25/512x512
-                      - type: state-label
-                        suffix: º
-                        style:
-                          left: 24%
-                          top: 43%
-                          font-size: 40px
-                        entity: weather.forecast_home
-                        attribute: temperature
-                      - type: state-label
-                        entity: sensor.blank_blank
-                        prefix: Exterior
-                        style:
-                          left: 28%
-                          top: 15%
-                          font-size: 20px
-                      - type: state-icon
-                        icon: ''
-                        tap_action:
-                          action: toggle
-                        style:
-                          left: 60%
-                          top: 80%
-                        entity: switch.luz_deck
-                      - type: state-icon
-                        icon: ''
-                        tap_action:
-                          action: toggle
-                        style:
-                          left: 20%
-                          top: 80%
-                        entity: switch.postes
-                      - type: state-icon
-                        style:
-                          left: 40%
-                          top: 80%
-                        icon: ''
-                        tap_action:
-                          action: toggle
-                        entity: switch.garagem
-                      - type: state-icon
-                        style:
-                          left: 80%
-                          top: 80%
-                        icon: ''
-                        entity: switch.shelly1_portao
-                        tap_action:
-                          action: more-info
-                      - type: image
-                        style:
-                          left: 50%
-                          top: 16%
-                          width: 100%
-                        image: >-
-                          /api/image/serve/f4d5e12c6f434eceb78ede028548fc88/512x512
-                        tap_action:
-                          action: navigate
-                          navigation_path: '#quartogu'
-                    image: /api/image/serve/ec615d34f5228cd62fd744c186a8f0a7/512x512
-          - type: vertical-stack
+              - type: picture-elements
+                elements:
+                  - type: image
+                    style:
+                      left: 20%
+                      top: 80%
+                      width: 17%
+                    image: /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                  - type: image
+                    style:
+                      left: 40%
+                      top: 80%
+                      width: 17%
+                    image: /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                  - type: image
+                    style:
+                      left: 60%
+                      top: 80%
+                      width: 17%
+                    image: /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                  - type: image
+                    style:
+                      left: 30%
+                      top: 34%
+                      width: 43%
+                    image: /api/image/serve/d265d4c5e6102c64fc3a0805195e0f94/512x512
+                  - type: state-label
+                    entity: climate.ac_suite
+                    attribute: current_temperature
+                    suffix: º
+                    style:
+                      left: 75%
+                      top: 43%
+                      font-size: 40px
+                  - type: state-label
+                    entity: sensor.blank_blank
+                    style:
+                      left: 74%
+                      top: 15%
+                      font-size: 20px
+                    prefix: Entrada
+                  - type: state-icon
+                    icon: mdi:desk-lamp
+                    tap_action:
+                      action: toggle
+                    style:
+                      left: 60%
+                      top: 80%
+                    entity: light.candeeiro_entrada
+                  - type: state-icon
+                    icon: mdi:ceiling-light-multiple-outline
+                    entity: switch.luz_entrada
+                    tap_action:
+                      action: toggle
+                    style:
+                      left: 20%
+                      top: 80%
+                  - type: state-icon
+                    style:
+                      left: 40%
+                      top: 80%
+                    icon: mdi:ceiling-light-multiple-outline
+                    tap_action:
+                      action: toggle
+                    state_color: true
+                    entity: switch.luz_corredor
+                  - type: image
+                    style:
+                      left: 50%
+                      top: 16%
+                      width: 100%
+                    image: /api/image/serve/f4d5e12c6f434eceb78ede028548fc88/512x512
+                    tap_action:
+                      action: navigate
+                      navigation_path: '#suite'
+                image: /api/image/serve/ec615d34f5228cd62fd744c186a8f0a7/512x512
+              - type: picture-elements
+                elements:
+                  - type: image
+                    style:
+                      left: 20%
+                      top: 80%
+                      width: 17%
+                    image: /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                  - type: image
+                    style:
+                      left: 40%
+                      top: 80%
+                      width: 17%
+                    image: /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                  - type: image
+                    style:
+                      left: 60%
+                      top: 80%
+                      width: 17%
+                    image: /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                  - type: image
+                    style:
+                      left: 80%
+                      top: 80%
+                      width: 17%
+                    image: /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                  - type: image
+                    style:
+                      left: 81%
+                      top: 40%
+                      width: 50%
+                    image: /api/image/serve/41cf8ee406a4a91d974bec6a15428d25/512x512
+                  - type: state-label
+                    suffix: º
+                    style:
+                      left: 24%
+                      top: 43%
+                      font-size: 40px
+                    entity: weather.forecast_home
+                    attribute: temperature
+                  - type: state-label
+                    entity: sensor.blank_blank
+                    prefix: Exterior
+                    style:
+                      left: 28%
+                      top: 15%
+                      font-size: 20px
+                  - type: state-icon
+                    icon: ''
+                    tap_action:
+                      action: none
+                    style:
+                      left: 60%
+                      top: 80%
+                    entity: switch.luz_deck
+                    hold_action:
+                      action: none
+                  - type: state-icon
+                    icon: ''
+                    tap_action:
+                      action: toggle
+                    style:
+                      left: 20%
+                      top: 80%
+                    entity: switch.postes
+                  - type: state-icon
+                    style:
+                      left: 40%
+                      top: 80%
+                    icon: ''
+                    tap_action:
+                      action: none
+                    entity: switch.garagem
+                    hold_action:
+                      action: none
+                  - type: state-icon
+                    style:
+                      left: 80%
+                      top: 80%
+                    icon: ''
+                    entity: switch.shelly1_portao
+                    tap_action:
+                      action: toggle
+                  - type: image
+                    style:
+                      left: 50%
+                      top: 16%
+                      width: 100%
+                    image: /api/image/serve/f4d5e12c6f434eceb78ede028548fc88/512x512
+                    tap_action:
+                      action: navigate
+                      navigation_path: '#quartogu'
+                image: /api/image/serve/ec615d34f5228cd62fd744c186a8f0a7/512x512
+          - type: horizontal-stack
             cards:
-              - type: horizontal-stack
-                cards:
-                  - type: picture-elements
-                    elements:
-                      - type: image
-                        style:
-                          left: 20%
-                          top: 80%
-                          width: 17%
-                        image: >-
-                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
-                      - type: image
-                        style:
-                          left: 40%
-                          top: 80%
-                          width: 17%
-                        image: >-
-                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
-                      - type: image
-                        style:
-                          left: 60%
-                          top: 80%
-                          width: 17%
-                        image: >-
-                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
-                      - type: image
-                        style:
-                          left: 80%
-                          top: 80%
-                          width: 17%
-                        image: >-
-                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
-                      - type: image
-                        image: >-
-                          /api/image/serve/c66b607cac7161d222a0d9038faf83f9/512x512
-                        style:
-                          left: 30%
-                          top: 40%
-                          width: 50%
-                        tap_action:
-                          action: navigate
-                          navigation_path: '#sala'
-                      - type: state-label
-                        entity: climate.ac_sala
-                        attribute: current_temperature
-                        suffix: º
-                        style:
-                          left: 75%
-                          top: 43%
-                          font-size: 40px
-                      - type: state-label
-                        entity: sensor.blank_blank
-                        prefix: Sala
-                        style:
-                          left: 80%
-                          top: 15%
-                          font-size: 20px
-                      - type: state-icon
-                        icon: mdi:air-conditioner
-                        entity: climate.ac_sala
-                        tap_action:
-                          action: toggle
-                        style:
-                          left: 60%
-                          top: 80%
-                      - type: state-icon
-                        icon: mdi:ceiling-light-multiple-outline
-                        entity: switch.luz_sala_estar
-                        tap_action:
-                          action: navigate
-                          navigation_path: '#sala'
-                        style:
-                          left: 20%
-                          top: 80%
-                      - type: state-icon
-                        style:
-                          left: 40%
-                          top: 80%
-                        icon: mdi:roller-shade-closed
-                        tap_action:
-                          action: more-info
-                        state_color: true
-                        entity: cover.shellyplus2pm_e86beae50630_cover_0
-                      - type: icon
-                        style:
-                          left: 80%
-                          top: 80%
-                        icon: mdi:television
-                        entity: media_player.apple_tv_sala
-                        tap_action:
-                          action: navigate
-                          navigation_path: '#apple-tv-sala'
-                      - type: image
-                        style:
-                          left: 50%
-                          top: 16%
-                          width: 100%
-                        image: >-
-                          /api/image/serve/f4d5e12c6f434eceb78ede028548fc88/512x512
-                        tap_action:
-                          action: navigate
-                          navigation_path: '#sala'
-                    image: /api/image/serve/ec615d34f5228cd62fd744c186a8f0a7/512x512
-                  - type: picture-elements
-                    elements:
-                      - type: image
-                        style:
-                          left: 20%
-                          top: 80%
-                          width: 17%
-                        image: >-
-                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
-                      - type: image
-                        style:
-                          left: 40%
-                          top: 80%
-                          width: 17%
-                        image: >-
-                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
-                      - type: image
-                        style:
-                          left: 60%
-                          top: 80%
-                          width: 17%
-                        image: >-
-                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
-                      - type: image
-                        style:
-                          left: 81%
-                          top: 40%
-                          width: 50%
-                        image: >-
-                          /api/image/serve/a3901c4a5e94d6f2e4af8bcb0a2ac74e/512x512
-                      - type: state-label
-                        entity: climate.ac_escritorio
-                        attribute: current_temperature
-                        suffix: º
-                        style:
-                          left: 24%
-                          top: 43%
-                          font-size: 40px
-                      - type: state-label
-                        entity: sensor.blank_blank
-                        prefix: Escritório
-                        style:
-                          left: 30%
-                          top: 15%
-                          font-size: 20px
-                      - type: state-icon
-                        icon: mdi:air-conditioner
-                        entity: climate.ac_escritorio
-                        tap_action:
-                          action: toggle
-                        style:
-                          left: 60%
-                          top: 80%
-                      - type: state-icon
-                        icon: mdi:ceiling-light-multiple-outline
-                        entity: switch.luz_escritorio
-                        tap_action:
-                          action: toggle
-                        style:
-                          left: 20%
-                          top: 80%
-                      - type: state-icon
-                        style:
-                          left: 40%
-                          top: 80%
-                        icon: mdi:roller-shade-closed
-                        tap_action:
-                          action: more-info
-                        entity: cover.rolo_escritorio
-                      - type: image
-                        style:
-                          left: 50%
-                          top: 16%
-                          width: 100%
-                        image: >-
-                          /api/image/serve/f4d5e12c6f434eceb78ede028548fc88/512x512
-                        tap_action:
-                          action: navigate
-                          navigation_path: '#escritorio'
-                    image: /api/image/serve/ec615d34f5228cd62fd744c186a8f0a7/512x512
-          - type: vertical-stack
+              - type: picture-elements
+                elements:
+                  - type: image
+                    style:
+                      left: 20%
+                      top: 80%
+                      width: 17%
+                    image: /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                  - type: image
+                    style:
+                      left: 40%
+                      top: 80%
+                      width: 17%
+                    image: /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                  - type: image
+                    style:
+                      left: 60%
+                      top: 80%
+                      width: 17%
+                    image: /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                  - type: image
+                    style:
+                      left: 80%
+                      top: 80%
+                      width: 17%
+                    image: /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                  - type: image
+                    image: /api/image/serve/c66b607cac7161d222a0d9038faf83f9/512x512
+                    style:
+                      left: 30%
+                      top: 40%
+                      width: 50%
+                    tap_action:
+                      action: navigate
+                      navigation_path: '#sala'
+                  - type: state-label
+                    entity: climate.ac_sala
+                    attribute: current_temperature
+                    suffix: º
+                    style:
+                      left: 75%
+                      top: 43%
+                      font-size: 40px
+                  - type: state-label
+                    entity: sensor.blank_blank
+                    prefix: Sala
+                    style:
+                      left: 80%
+                      top: 15%
+                      font-size: 20px
+                  - type: state-icon
+                    icon: mdi:air-conditioner
+                    entity: climate.ac_sala
+                    tap_action:
+                      action: toggle
+                    style:
+                      left: 60%
+                      top: 80%
+                  - type: state-icon
+                    icon: mdi:ceiling-light-multiple-outline
+                    entity: switch.luz_sala_estar
+                    tap_action:
+                      action: navigate
+                      navigation_path: '#sala'
+                    style:
+                      left: 20%
+                      top: 80%
+                  - type: state-icon
+                    style:
+                      left: 40%
+                      top: 80%
+                    icon: mdi:roller-shade-closed
+                    tap_action:
+                      action: more-info
+                    state_color: true
+                    entity: cover.shellyplus2pm_e86beae50630_cover_0
+                  - type: icon
+                    style:
+                      left: 80%
+                      top: 80%
+                    icon: mdi:television
+                    entity: media_player.apple_tv_sala
+                    tap_action:
+                      action: navigate
+                      navigation_path: '#apple-tv-sala'
+                  - type: image
+                    style:
+                      left: 50%
+                      top: 16%
+                      width: 100%
+                    image: /api/image/serve/f4d5e12c6f434eceb78ede028548fc88/512x512
+                    tap_action:
+                      action: navigate
+                      navigation_path: '#sala'
+                image: /api/image/serve/ec615d34f5228cd62fd744c186a8f0a7/512x512
+              - type: picture-elements
+                elements:
+                  - type: image
+                    style:
+                      left: 20%
+                      top: 80%
+                      width: 17%
+                    image: /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                  - type: image
+                    style:
+                      left: 40%
+                      top: 80%
+                      width: 17%
+                    image: /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                  - type: image
+                    style:
+                      left: 60%
+                      top: 80%
+                      width: 17%
+                    image: /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                  - type: image
+                    style:
+                      left: 81%
+                      top: 40%
+                      width: 50%
+                    image: /api/image/serve/a3901c4a5e94d6f2e4af8bcb0a2ac74e/512x512
+                  - type: state-label
+                    entity: climate.ac_escritorio
+                    attribute: current_temperature
+                    suffix: º
+                    style:
+                      left: 24%
+                      top: 43%
+                      font-size: 40px
+                  - type: state-label
+                    entity: sensor.blank_blank
+                    prefix: Escritório
+                    style:
+                      left: 30%
+                      top: 15%
+                      font-size: 20px
+                  - type: state-icon
+                    icon: mdi:air-conditioner
+                    entity: climate.ac_escritorio
+                    tap_action:
+                      action: toggle
+                    style:
+                      left: 60%
+                      top: 80%
+                  - type: state-icon
+                    icon: mdi:ceiling-light-multiple-outline
+                    entity: switch.luz_escritorio
+                    tap_action:
+                      action: toggle
+                    style:
+                      left: 20%
+                      top: 80%
+                  - type: state-icon
+                    style:
+                      left: 40%
+                      top: 80%
+                    icon: mdi:roller-shade-closed
+                    tap_action:
+                      action: more-info
+                    entity: cover.rolo_escritorio
+                  - type: image
+                    style:
+                      left: 50%
+                      top: 16%
+                      width: 100%
+                    image: /api/image/serve/f4d5e12c6f434eceb78ede028548fc88/512x512
+                    tap_action:
+                      action: navigate
+                      navigation_path: '#escritorio'
+                image: /api/image/serve/ec615d34f5228cd62fd744c186a8f0a7/512x512
+          - type: horizontal-stack
             cards:
-              - type: horizontal-stack
-                cards:
-                  - type: picture-elements
-                    elements:
-                      - type: image
-                        style:
-                          left: 20%
-                          top: 80%
-                          width: 17%
-                        image: >-
-                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
-                      - type: image
-                        style:
-                          left: 40%
-                          top: 80%
-                          width: 17%
-                        image: >-
-                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
-                      - type: image
-                        style:
-                          left: 60%
-                          top: 80%
-                          width: 17%
-                        image: >-
-                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
-                      - type: image
-                        style:
-                          left: 80%
-                          top: 80%
-                          width: 17%
-                        image: >-
-                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
-                      - type: image
-                        style:
-                          left: 30%
-                          top: 40%
-                          width: 50%
-                        image: >-
-                          /api/image/serve/cb10bf363b051d4559f903fe3aa4a150/512x512
-                      - type: state-label
-                        entity: climate.ac_suite
-                        attribute: current_temperature
-                        suffix: º
-                        style:
-                          left: 75%
-                          top: 43%
-                          font-size: 40px
-                      - type: state-label
-                        entity: sensor.blank_blank
-                        style:
-                          left: 78%
-                          top: 15%
-                          font-size: 20px
-                        prefix: Suite
-                      - type: state-icon
-                        icon: mdi:air-conditioner
-                        entity: climate.ac_suite
-                        tap_action:
-                          action: toggle
-                        style:
-                          left: 60%
-                          top: 80%
-                      - type: state-icon
-                        icon: mdi:ceiling-light-multiple-outline
-                        entity: switch.luz_suite
-                        tap_action:
-                          action: toggle
-                        style:
-                          left: 20%
-                          top: 80%
-                      - type: state-icon
-                        style:
-                          left: 40%
-                          top: 80%
-                        icon: mdi:roller-shade-closed
-                        tap_action:
-                          action: more-info
-                        state_color: true
-                        entity: cover.rolo_suite
-                      - type: icon
-                        style:
-                          left: 80%
-                          top: 80%
-                        icon: mdi:television
-                        entity: media_player.apple_tv_sala
-                        tap_action:
-                          action: navigate
-                          navigation_path: '#apple-tv-quarto'
-                      - type: image
-                        style:
-                          left: 50%
-                          top: 16%
-                          width: 100%
-                        image: >-
-                          /api/image/serve/f4d5e12c6f434eceb78ede028548fc88/512x512
-                        tap_action:
-                          action: navigate
-                          navigation_path: '#suite'
-                    image: /api/image/serve/ec615d34f5228cd62fd744c186a8f0a7/512x512
-                  - type: picture-elements
-                    elements:
-                      - type: image
-                        style:
-                          left: 20%
-                          top: 80%
-                          width: 17%
-                        image: >-
-                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
-                      - type: image
-                        style:
-                          left: 40%
-                          top: 80%
-                          width: 17%
-                        image: >-
-                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
-                      - type: image
-                        style:
-                          left: 60%
-                          top: 80%
-                          width: 17%
-                        image: >-
-                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
-                      - type: image
-                        style:
-                          left: 80%
-                          top: 80%
-                          width: 17%
-                        image: >-
-                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
-                      - type: image
-                        style:
-                          left: 81%
-                          top: 40%
-                          width: 50%
-                        image: >-
-                          /api/image/serve/f005689e0679c24d8254fd469a29cacf/512x512
-                      - type: state-label
-                        entity: climate.ac_gustavo
-                        attribute: current_temperature
-                        suffix: º
-                        style:
-                          left: 24%
-                          top: 43%
-                          font-size: 40px
-                      - type: state-label
-                        entity: sensor.blank_blank
-                        prefix: Quarto Gu
-                        style:
-                          left: 30%
-                          top: 15%
-                          font-size: 20px
-                      - type: state-icon
-                        icon: mdi:air-conditioner
-                        entity: climate.ac_gustavo
-                        tap_action:
-                          action: toggle
-                        style:
-                          left: 60%
-                          top: 80%
-                      - type: state-icon
-                        icon: mdi:ceiling-light-multiple-outline
-                        entity: switch.luz_sala_estar
-                        tap_action:
-                          action: toggle
-                        style:
-                          left: 20%
-                          top: 80%
-                      - type: state-icon
-                        style:
-                          left: 40%
-                          top: 80%
-                        icon: mdi:desk-lamp
-                        tap_action:
-                          action: toggle
-                        entity: light.candeeiro_gu
-                      - type: state-icon
-                        style:
-                          left: 80%
-                          top: 80%
-                        icon: mdi:roller-shade-closed
-                        entity: cover.rolo_quarto_gu
-                        tap_action:
-                          action: more-info
-                      - type: image
-                        style:
-                          left: 50%
-                          top: 16%
-                          width: 100%
-                        image: >-
-                          /api/image/serve/f4d5e12c6f434eceb78ede028548fc88/512x512
-                        tap_action:
-                          action: navigate
-                          navigation_path: '#quartogu'
-                    image: /api/image/serve/ec615d34f5228cd62fd744c186a8f0a7/512x512
-          - type: vertical-stack
+              - type: picture-elements
+                elements:
+                  - type: image
+                    style:
+                      left: 20%
+                      top: 80%
+                      width: 17%
+                    image: /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                  - type: image
+                    style:
+                      left: 40%
+                      top: 80%
+                      width: 17%
+                    image: /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                  - type: image
+                    style:
+                      left: 60%
+                      top: 80%
+                      width: 17%
+                    image: /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                  - type: image
+                    style:
+                      left: 80%
+                      top: 80%
+                      width: 17%
+                    image: /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                  - type: image
+                    style:
+                      left: 30%
+                      top: 40%
+                      width: 50%
+                    image: /api/image/serve/cb10bf363b051d4559f903fe3aa4a150/512x512
+                  - type: state-label
+                    entity: climate.ac_suite
+                    attribute: current_temperature
+                    suffix: º
+                    style:
+                      left: 75%
+                      top: 43%
+                      font-size: 40px
+                  - type: state-label
+                    entity: sensor.blank_blank
+                    style:
+                      left: 78%
+                      top: 15%
+                      font-size: 20px
+                    prefix: Suite
+                  - type: state-icon
+                    icon: mdi:air-conditioner
+                    entity: climate.ac_suite
+                    tap_action:
+                      action: toggle
+                    style:
+                      left: 60%
+                      top: 80%
+                  - type: state-icon
+                    icon: mdi:ceiling-light-multiple-outline
+                    entity: switch.luz_suite
+                    tap_action:
+                      action: toggle
+                    style:
+                      left: 20%
+                      top: 80%
+                  - type: state-icon
+                    style:
+                      left: 40%
+                      top: 80%
+                    icon: mdi:roller-shade-closed
+                    tap_action:
+                      action: more-info
+                    state_color: true
+                    entity: cover.rolo_suite
+                  - type: icon
+                    style:
+                      left: 80%
+                      top: 80%
+                    icon: mdi:television
+                    entity: media_player.apple_tv_sala
+                    tap_action:
+                      action: navigate
+                      navigation_path: '#apple-tv-quarto'
+                  - type: image
+                    style:
+                      left: 50%
+                      top: 16%
+                      width: 100%
+                    image: /api/image/serve/f4d5e12c6f434eceb78ede028548fc88/512x512
+                    tap_action:
+                      action: navigate
+                      navigation_path: '#suite'
+                image: /api/image/serve/ec615d34f5228cd62fd744c186a8f0a7/512x512
+              - type: picture-elements
+                elements:
+                  - type: image
+                    style:
+                      left: 20%
+                      top: 80%
+                      width: 17%
+                    image: /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                  - type: image
+                    style:
+                      left: 40%
+                      top: 80%
+                      width: 17%
+                    image: /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                  - type: image
+                    style:
+                      left: 60%
+                      top: 80%
+                      width: 17%
+                    image: /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                  - type: image
+                    style:
+                      left: 80%
+                      top: 80%
+                      width: 17%
+                    image: /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                  - type: image
+                    style:
+                      left: 81%
+                      top: 40%
+                      width: 50%
+                    image: /api/image/serve/f005689e0679c24d8254fd469a29cacf/512x512
+                  - type: state-label
+                    entity: climate.ac_gustavo
+                    attribute: current_temperature
+                    suffix: º
+                    style:
+                      left: 24%
+                      top: 43%
+                      font-size: 40px
+                  - type: state-label
+                    entity: sensor.blank_blank
+                    prefix: Quarto Gu
+                    style:
+                      left: 30%
+                      top: 15%
+                      font-size: 20px
+                  - type: state-icon
+                    icon: mdi:air-conditioner
+                    entity: climate.ac_gustavo
+                    tap_action:
+                      action: toggle
+                    style:
+                      left: 60%
+                      top: 80%
+                  - type: state-icon
+                    icon: mdi:ceiling-light-multiple-outline
+                    entity: switch.luz_sala_estar
+                    tap_action:
+                      action: toggle
+                    style:
+                      left: 20%
+                      top: 80%
+                  - type: state-icon
+                    style:
+                      left: 40%
+                      top: 80%
+                    icon: mdi:desk-lamp
+                    tap_action:
+                      action: toggle
+                    entity: light.candeeiro_gu
+                  - type: state-icon
+                    style:
+                      left: 80%
+                      top: 80%
+                    icon: mdi:roller-shade-closed
+                    entity: cover.rolo_quarto_gu
+                    tap_action:
+                      action: more-info
+                  - type: image
+                    style:
+                      left: 50%
+                      top: 16%
+                      width: 100%
+                    image: /api/image/serve/f4d5e12c6f434eceb78ede028548fc88/512x512
+                    tap_action:
+                      action: navigate
+                      navigation_path: '#quartogu'
+                image: /api/image/serve/ec615d34f5228cd62fd744c186a8f0a7/512x512
+          - type: horizontal-stack
             cards:
-              - type: horizontal-stack
-                cards:
-                  - type: picture-elements
-                    elements:
-                      - type: image
-                        style:
-                          left: 20%
-                          top: 80%
-                          width: 17%
-                        image: >-
-                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
-                      - type: image
-                        style:
-                          left: 40%
-                          top: 80%
-                          width: 17%
-                        image: >-
-                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
-                      - type: image
-                        style:
-                          left: 30%
-                          top: 40%
-                          width: 50%
-                        image: >-
-                          /api/image/serve/d1ca1988b821ceb39c13deca0e305d6b/512x512
-                      - type: state-label
-                        entity: climate.ac_sala
-                        attribute: current_temperature
-                        suffix: º
-                        style:
-                          left: 75%
-                          top: 43%
-                          font-size: 40px
-                      - type: state-label
-                        entity: sensor.blank_blank
-                        prefix: Cozinha
-                        style:
-                          left: 73%
-                          top: 15%
-                          font-size: 20px
-                      - type: state-icon
-                        icon: mdi:ceiling-light-multiple-outline
-                        entity: switch.luz_cozinha
-                        tap_action:
-                          action: toggle
-                        style:
-                          left: 20%
-                          top: 80%
-                      - type: state-icon
-                        style:
-                          left: 40%
-                          top: 80%
-                        icon: mdi:roller-shade-closed
-                        tap_action:
-                          action: more-info
-                        state_color: true
-                        entity: cover.rolo_cozinha
-                    image: /api/image/serve/ec615d34f5228cd62fd744c186a8f0a7/512x512
-                  - type: picture-elements
-                    elements:
-                      - type: image
-                        style:
-                          left: 20%
-                          top: 80%
-                          width: 17%
-                        image: >-
-                          /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
-                      - type: image
-                        style:
-                          left: 81%
-                          top: 40%
-                          width: 50%
-                        image: >-
-                          /api/image/serve/342bed849a7d3e382dc4415f319a87e6/512x512
-                      - type: state-label
-                        entity: climate.ac_escritorio
-                        attribute: current_temperature
-                        suffix: º
-                        style:
-                          left: 24%
-                          top: 43%
-                          font-size: 40px
-                      - type: state-label
-                        entity: sensor.blank_blank
-                        prefix: Despensa
-                        style:
-                          left: 30%
-                          top: 15%
-                          font-size: 20px
-                      - type: state-icon
-                        icon: mdi:ceiling-light-multiple-outline
-                        entity: switch.luz_despensa
-                        tap_action:
-                          action: toggle
-                        style:
-                          left: 20%
-                          top: 80%
-                    image: /api/image/serve/ec615d34f5228cd62fd744c186a8f0a7/512x512
+              - type: picture-elements
+                elements:
+                  - type: image
+                    style:
+                      left: 20%
+                      top: 80%
+                      width: 17%
+                    image: /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                  - type: image
+                    style:
+                      left: 40%
+                      top: 80%
+                      width: 17%
+                    image: /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                  - type: image
+                    style:
+                      left: 30%
+                      top: 40%
+                      width: 50%
+                    image: /api/image/serve/d1ca1988b821ceb39c13deca0e305d6b/512x512
+                  - type: state-label
+                    entity: climate.ac_sala
+                    attribute: current_temperature
+                    suffix: º
+                    style:
+                      left: 75%
+                      top: 43%
+                      font-size: 40px
+                  - type: state-label
+                    entity: sensor.blank_blank
+                    prefix: Cozinha
+                    style:
+                      left: 73%
+                      top: 15%
+                      font-size: 20px
+                  - type: state-icon
+                    icon: mdi:ceiling-light-multiple-outline
+                    entity: switch.luz_cozinha
+                    tap_action:
+                      action: toggle
+                    style:
+                      left: 20%
+                      top: 80%
+                  - type: state-icon
+                    style:
+                      left: 40%
+                      top: 80%
+                    icon: mdi:roller-shade-closed
+                    tap_action:
+                      action: more-info
+                    state_color: true
+                    entity: cover.rolo_cozinha
+                image: /api/image/serve/ec615d34f5228cd62fd744c186a8f0a7/512x512
+              - type: picture-elements
+                elements:
+                  - type: image
+                    style:
+                      left: 20%
+                      top: 80%
+                      width: 17%
+                    image: /api/image/serve/c7214057ab233fb18959af4ecf78e793/512x512
+                  - type: image
+                    style:
+                      left: 81%
+                      top: 40%
+                      width: 50%
+                    image: /api/image/serve/342bed849a7d3e382dc4415f319a87e6/512x512
+                  - type: state-label
+                    entity: climate.ac_escritorio
+                    attribute: current_temperature
+                    suffix: º
+                    style:
+                      left: 24%
+                      top: 43%
+                      font-size: 40px
+                  - type: state-label
+                    entity: sensor.blank_blank
+                    prefix: Despensa
+                    style:
+                      left: 30%
+                      top: 15%
+                      font-size: 20px
+                  - type: state-icon
+                    icon: mdi:ceiling-light-multiple-outline
+                    entity: switch.luz_despensa
+                    tap_action:
+                      action: toggle
+                    style:
+                      left: 20%
+                      top: 80%
+                image: /api/image/serve/ec615d34f5228cd62fd744c186a8f0a7/512x512
           - type: vertical-stack
             cards:
               - type: custom:bubble-card
@@ -1302,6 +1259,25 @@ views:
                 card_type: separator
               - type: custom:bubble-card
                 card_type: empty-column
+              - type: custom:mini-graph-card
+                graph: line
+                show:
+                  name: false
+                  icon: false
+                  state: false
+                  labels: true
+                entities:
+                  - entity: climate.ac_sala
+                    attribute: current_temperature
+                  - entity: climate.ac_escritorio
+                    attribute: current_temperature
+                  - entity: climate.ac_gustavo
+                    attribute: current_temperature
+                  - entity: climate.ac_suite
+                    attribute: current_temperature
+                animate: true
+                hour24: true
+                decimals: 0
               - type: horizontal-stack
                 cards:
                   - type: custom:mushroom-climate-card
