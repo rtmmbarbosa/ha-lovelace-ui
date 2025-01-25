@@ -59,6 +59,8 @@ The room cards is a picture elements card with a lot of images on top of each ot
 
 They are organized in groups of two inside an horizontal stack.
 
+![Room Card _Entrada_](screenshots/room_card.png)
+
 Here's the code of the card named _Entrada_:
 
 ```
